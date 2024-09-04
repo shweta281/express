@@ -1,30 +1,12 @@
-const express=require("express")
-const { people } = require("./data")
-const app= express()
+const express = require("express");
+const people=require("./Routes/people")
 
-app.use(express.json())
-//GET
-app.get("/api/people", (req,res)=>{
-    res.status(200).json(people);
-})
+const app = express();
 
-//POST
-app.post("/api/people", (req,res)=>{
-    const {name}=req.body;
-    if(name){
-        return res.status(400).json({succes:true, person:name})
-    }
-    else{
-        return res.status(401).json({success:"please provide a valid name"})
-    }
-})
+app.use(express.json());
 
-//PUT
-app.put("/api/people/:id", (res,req)=>{
-    
-})
+app.use("/api/people", people);
 
-app.listen(5000, ()=>{
-    console.log("listening on 5000");
-    
-})
+app.listen(5000, () => {
+  console.log("listening on 5000");
+});
