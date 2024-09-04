@@ -1,7 +1,9 @@
 const express = require("express");
-const people=require("./Routes/people")
+const people = require("./Routes/people");
 
 const app = express();
+
+//middleware
 
 app.use(express.json());
 
