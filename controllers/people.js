@@ -1,6 +1,8 @@
 const { people } = require("../data");  
 
 // Controller functions
+
+//GET
 const getPeople = (req, res) => {
   res.status(200).json(people);
 };
@@ -10,6 +12,8 @@ const getPeopleParams = (req, res) => {
   res.status(200).json(people.filter((person) => `${person.id}` === id));
 };
 
+
+//POST
 const postPeople = (req, res) => {
   const { name } = req.body;
   if (name) {
@@ -19,6 +23,8 @@ const postPeople = (req, res) => {
   }
 };
 
+
+//PUT
 const putPeople = (req, res) => {
   const { id } = req.params;
   const { name } = req.body;
@@ -31,6 +37,8 @@ const putPeople = (req, res) => {
   }
 };
 
+
+//DELETE
 const deletePeople = (req, res) => {
   const { id } = req.params;
   const person = people.find((person) => `${person.id}` === id);
