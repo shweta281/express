@@ -5,10 +5,13 @@
     "mongoose": "^8.6.1"
   },
   "name": "task-manager-app",
+  "homepage": "http://shweta281.github.io/express",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,6 +19,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "nodemon": "^3.1.4"
   }
 }
